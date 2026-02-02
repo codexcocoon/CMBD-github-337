@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS TABS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div class="w-full h-screen flex justify-center items-center">
+        <div class="border max-w-[720px]">
+            <div class="flex *:w-full *:text-center *:[:not(:last-child)]:border-r *:leading-13 *:cursor-pointer *:text-lg *:[:not(.active)]:hover:bg-gray-200 
+                *:[&.active]:bg-red-100 *:[:not(.active)]:border-b" id="heads">
+                <div class="active">Dhaka</div><!-- / -->
+                <div class="">Rajshahi</div><!-- / -->
+                <div class="">Khulna</div><!-- / -->
+            </div><!-- / -->
+            <div class="*:bg-gray-300 *:p-4 *:[:not(.active)]:hidden 
+            *:[&.active]:bg-red-100" id="details">
+                <div class="active">
+                    Dhaka Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, quaerat?
+                </div><!-- / -->
+                <div class="">
+                    Rajshahi Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam pariatur mollitia quam
+                    maxime quo omnis veniam quasi eum cumque accusantium!
+                </div><!-- / -->
+                <div class="">
+                    Khulna Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur praesentium quisquam neque
+                    error, laboriosam inventore magni fuga odio aperiam in est temporibus consequatur porro vitae dicta,
+                    adipisci non doloribus ad.
+                </div><!-- / -->
+            </div><!-- / -->
+        </div><!-- / -->
+    </div><!-- / -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

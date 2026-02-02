@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Accordion</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div class="container mx-auto min-h-screen grid place-content-center gap-8 *:cursor-pointer">
+        <div class="accordion border  w-96">
+            <div
+                class="head p-3 font-bold bg-black text-white hover:bg-gray-500 relative before:content-['-'] before:absolute before:top-0 before:right-0 before:h-full before:aspect-square before:grid before:place-content-center before:text-white">
+                What is your name?</div>
+            <!-- /.head -->
+            <div class="details px-3 py-3 max-h-max overflow-hidden transition-all duration-300">
+                My name is Shobuj
+            </div><!-- /.details -->
+        </div><!-- /.accordion -->
+        <div class="accordion border">
+            <div
+                class="head w-96 p-3 font-bold text-black hover:bg-gray-500 hover:text-white relative before:content-['+'] before:absolute before:top-0 before:right-0 before:h-full before:aspect-square before:grid before:place-content-center before:text-black">
+                What is your city?</div>
+            <!-- /.head -->
+            <div class="details p-0 max-h-0 overflow-hidden transition-all duration-300">
+                My city is Khulna
+            </div><!-- /.details -->
+        </div><!-- /.accordion -->
+        <div class="accordion border">
+            <div
+                class="head w-96 p-3 font-bold text-black hover:bg-gray-500 hover:text-white relative before:content-['+'] before:absolute before:top-0 before:right-0 before:h-full before:aspect-square before:grid before:place-content-center before:text-black">
+                What class are you in?</div>
+            <!-- /.head -->
+            <div class="details p-0 max-h-0 overflow-hidden transition-all duration-300">
+                I read in class 9
+            </div><!-- /.details -->
+        </div><!-- /.accordion -->
+    </div><!-- /.container mx-auto min-h-screen -->
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
