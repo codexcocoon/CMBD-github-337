@@ -2,7 +2,7 @@ const success = true;
 const myPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
     if (success) {
-      resolve("promise resolved successfully");
+      resolve("promise has resolved successfully");
     } else {
       reject("promise rejected successfully");
     }
