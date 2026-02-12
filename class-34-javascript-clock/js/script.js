@@ -71,7 +71,7 @@ const showDateAndTime = () => {
     year: "numeric",
   });
 };
-
+showDateAndTime();
 setInterval(showDateAndTime, 1000);
 // calendar
 const weekDay = d.toLocaleString("en-US", { weekday: "short" }); //get current day
