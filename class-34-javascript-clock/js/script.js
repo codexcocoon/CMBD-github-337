@@ -60,6 +60,7 @@ days.forEach((w) => {
   div.textContent = w;
   week.appendChild(div);
 });
+const dates = [];
 
 const showDateAndTime = () => {
   const d = new Date();
@@ -69,14 +70,49 @@ const showDateAndTime = () => {
     day: "numeric",
     year: "numeric",
   });
-  const weekDay = d.toLocaleString("en-US", { weekday: "short" }); //get current day
-  Array.from(week.children).forEach((w) => {
-    if (w.textContent === weekDay) {
-      w.classList.add("border-blue-500", "text-blue-500");
-    } else {
-      w.classList.remove("border-blue-500", "text-blue-500");
-    }
-  });
 };
 
 setInterval(showDateAndTime, 1000);
+// calendar
+const weekDay = d.toLocaleString("en-US", { weekday: "short" }); //get current day
+
+Array.from(week.children).forEach((w) => {
+  if (w.textContent === weekDay) {
+    w.classList.add("border-blue-500", "text-blue-500");
+  } else {
+    w.classList.remove("border-blue-500", "text-blue-500");
+  }
+});
+
+year = d.getFullYear();
+month = d.getMonth();
+const firstDay = new Date(year, month, 1).getDay();
+
+const numberOfDays = new Date(year, month + 1, 0).getDate();
+let day = document.getElementById("day");
+
+for (i = 0; i < firstDay; i++) {
+  let span = document.createElement("span");
+  span.classList = "border rounded px-2 py-1 text-xs font-bold";
+  span.textContent = "";
+  day.appendChild(span);
+}
+
+for (i = 1; i <= numberOfDays; i++) {
+  dates.push(i);
+}
+
+dates.forEach((w) => {
+  let span = document.createElement("span");
+  span.classList = "border rounded px-2 py-1 text-xs font-bold";
+  span.textContent = w;
+  day.appendChild(span);
+  // Highlight today
+  if (w === d.getDate()) {
+    span.classList.add("border-blue-500", "text-blue-500");
+  }
+  if ((i + firstDay) % 7 == 0) {
+    let span = document.createElement("span");
+    day.appendChild(span);
+  }
+});
