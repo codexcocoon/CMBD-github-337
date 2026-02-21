@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* global style end */
+html {
+  font-size: 62.5%;
+}
+/* global style end */
+/* .header start */
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+}
+header {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 3.7rem 0;
+}
+.header > .logo {
+  width: 65%;
+  display: flex;
+  align-items: center;
+}
+.header > .logo > img {
+  width: 25.3rem;
+}
+.header > .menu {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header > .menu > a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #3c354f;
+  font-family: "Work Sans", sans-serif;
+}
+.header > .menu > .cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(11, 2, 35, 0.1);
+  border-radius: 8px;
+  padding: 1.7rem 2.4rem;
+  font-size: 1.8rem;
+  gap: 2.4rem;
+}
+/* .header end */
+/* hero section start */
+.hero-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero-left {
+  background: url("images/bg-hero.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.hero-right > img {
+  width: 100%;
+}
+/* hero section end */

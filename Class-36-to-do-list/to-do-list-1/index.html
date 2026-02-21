@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-8 px-4">
+    <div class="max-w-2xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">My To-Do List</h1>
+            <p class="text-gray-600">Stay organized and productive</p>
+        </div>
+
+        <!-- Main Card -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <!-- Input Section -->
+            <div class="flex gap-2 mb-6">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    placeholder="Add a new task..." 
+                    class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                >
+                <button 
+                    id="addBtn" 
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition duration-200 ease-in-out transform hover:scale-105"
+                >
+                    Add
+                </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-4 mb-6 text-center">
+                <div class="bg-blue-50 p-3 rounded-lg">
+                    <div class="text-2xl font-bold text-blue-600" id="totalTasks">0</div>
+                    <div class="text-sm text-gray-600">Total Tasks</div>
+                </div>
+                <div class="bg-green-50 p-3 rounded-lg">
+                    <div class="text-2xl font-bold text-green-600" id="completedTasks">0</div>
+                    <div class="text-sm text-gray-600">Completed</div>
+                </div>
+                <div class="bg-orange-50 p-3 rounded-lg">
+                    <div class="text-2xl font-bold text-orange-600" id="remainingTasks">0</div>
+                    <div class="text-sm text-gray-600">Remaining</div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex gap-2 mb-6">
+                <button id="filterAll" class="filter-btn active px-4 py-2 rounded-lg text-sm font-medium transition duration-200">
+                    All
+                </button>
+                <button id="filterActive" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition duration-200">
+                    Active
+                </button>
+                <button id="filterCompleted" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition duration-200">
+                    Completed
+                </button>
+                <button id="clearCompleted" class="ml-auto bg-red-50 hover:bg-red-100 text-red-600 px-4 py-2 rounded-lg text-sm font-medium transition duration-200">
+                    Clear Completed
+                </button>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-200 mb-6"></div>
+
+            <!-- Tasks List -->
+            <div id="todoList" class="space-y-2">
+                <div class="text-center text-gray-500 py-8">
+                    <p class="text-lg">No tasks yet. Add one to get started! 🚀</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-8 text-gray-600 text-sm">
+            <p>Click checkbox to mark complete, hover to edit or delete</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
