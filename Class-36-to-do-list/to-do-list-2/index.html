@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container mx-auto min-h-screen grid place-items-center">
+        <div class="w-96 md:w-1/2 border p-4 rounded shadow shadow-black">
+            <form action="" id="taskForm" class="flex">
+                <input class="border border-r-0 px-2 border-black rounded-l grow focus:outline-0" type="text"
+                    placeholder="Task">
+                <button type="submit"
+                    class="bg-green-200 border rounded-r py-1 px-3 uppercase cursor-pointer hover:bg-green-400">Add
+                    Task</button>
+            </form>
+            <ul id="showTask"
+                class="grid gap-2 my-3 mx-2 *:p-1 *:flex *:justify-between *:items-center *:even:bg-gray-200 *:text-sm *:hover:bg-gray-200">
+                <li>
+                    <p class="font-normal line-through">Cha khete hobe</p>
+                    <div>
+                        <button disabled
+                            class="border aspect-square rounded cursor-pointer bg-green-600 hover:bg-green-400 text-white px-1 font-light disabled:bg-gray-500"><i
+                                class="fa-solid fa-check"></i></button>
+                        <button
+                            class="border aspect-square rounded cursor-pointer bg-red-400 hover:bg-red-600 text-white px-1 font-light"><i
+                                class="fa-solid fa-x"></i></button>
+                        <button
+                            class="border aspect-square rounded cursor-pointer bg-red-800 hover:bg-red-600 text-white px-1 font-light"><i
+                                class="fa-solid fa-trash"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <p class="font-normal">Class korte hobe</p>
+                    <div>
+                        <button disabled
+                            class="border aspect-square rounded cursor-pointer bg-green-600 hover:bg-green-400 text-white px-1 font-light disabled:bg-gray-500"><i
+                                class="fa-solid fa-check"></i></button>
+                        <button
+                            class="border aspect-square rounded cursor-pointer bg-red-400 hover:bg-red-600 text-white px-1 font-light"><i
+                                class="fa-solid fa-x"></i></button>
+                        <button
+                            class="border aspect-square rounded cursor-pointer bg-red-800 hover:bg-red-600 text-white px-1 font-light"><i
+                                class="fa-solid fa-trash"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <p class="font-normal">Practise korte hobe</p>
+                    <div>
+                        <button disabled
+                            class="border aspect-square rounded cursor-pointer bg-green-600 hover:bg-green-400 text-white px-1 font-light disabled:bg-gray-500"><i
+                                class="fa-solid fa-check"></i></button>
+                        <button
+                            class="border aspect-square rounded cursor-pointer bg-red-400 hover:bg-red-600 text-white px-1 font-light"><i
+                                class="fa-solid fa-x"></i></button>
+                        <button
+                            class="border aspect-square rounded cursor-pointer bg-red-800 hover:bg-red-600 text-white px-1 font-light"><i
+                                class="fa-solid fa-trash"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <p class="font-normal">Assignment submit korte hobe</p>
+                    <div>
+                        <button disabled
+                            class="border aspect-square rounded cursor-pointer bg-green-600 hover:bg-green-400 text-white px-1 font-light disabled:bg-gray-500"><i
+                                class="fa-solid fa-check"></i></button>
+                        <button
+                            class="border aspect-square rounded cursor-pointer bg-red-400 hover:bg-red-600 text-white px-1 font-light"><i
+                                class="fa-solid fa-x"></i></button>
+                        <button
+                            class="border aspect-square rounded cursor-pointer bg-red-800 hover:bg-red-600 text-white px-1 font-light"><i
+                                class="fa-solid fa-trash"></i></button>
+                    </div>
+                </li>
+            </ul><!-- /#showTask -->
+        </div>
+    </div><!-- /.container -->
+
+</body>
+
+</html>
