@@ -9,27 +9,81 @@ taskForm.addEventListener("submit", (e) => {
   if (!task) {
     errMsg.textContent = "Please provide your name";
   } else {
-    const li = document.createElement("li");
-    const p = document.createElement("p");
-    p.textContent = task;
-    p.classList.add("font-normal");
-    const div = document.createElement("div");
-    div.innerHTML = `
+    // local storage set item
+    if (localStorage.getItem("todo")) {
+      const preData = localStorage.getItem("todo");
+      const arr = JSON.parse(preData);
+      const newTask = {
+        task: task,
+        isComplete: false,
+      };
+      arr.push(newTask);
+      localStorage.setItem("todo", JSON.stringify(arr));
+    } else {
+      const newTask = [
+        {
+          task: task,
+          isComplete: false,
+        },
+      ];
+      localStorage.setItem("todo", JSON.stringify(newTask));
+    }
+    addTask(task);
+    taskForm.reset();
+  }
+});
+const addTask = (task, isComplete = false) => {
+  const li = document.createElement("li");
+  const p = document.createElement("p");
+  p.textContent = task;
+  p.classList.add("font-normal");
+  if (isComplete) {
+    p.classList.add("line-through", "text-gray-500");
+  }
+  const div = document.createElement("div");
+  isDisabled = isComplete ? "disabled" : "";
+  div.innerHTML = `
             <button onClick="this.setAttribute('disabled', true);
             this.parentElement.previousElementSibling.classList.add('line-through');
-            this.parentElement.previousElementSibling.classList.add('text-gray-500');"
+            this.parentElement.previousElementSibling.classList.add('text-gray-500');
+            completed(this)" ${isDisabled}
                 class="border aspect-square rounded cursor-pointer bg-green-600 hover:bg-green-400 text-white px-1 font-light disabled:bg-gray-500"><i
                     class="fa-solid fa-check"></i></button>
-            <button
-                class="border aspect-square rounded cursor-pointer bg-red-400 hover:bg-red-600 text-white px-1 font-light"><i
-                    class="fa-solid fa-x"></i></button>
-            <button onClick="this.parentElement.parentElement.remove();"
+            <button onClick="deleteTask(this);this.parentElement.parentElement.remove();"
                 class="border aspect-square rounded cursor-pointer bg-red-800 hover:bg-red-600 text-white px-1 font-light"><i
                     class="fa-solid fa-trash"></i></button>
     `;
-    li.appendChild(p);
-    li.appendChild(div);
-    showTask.appendChild(li);
-  }
-});
-localStorage.setItem("tasks", '{"msg":"sir"}');
+  li.appendChild(p);
+  li.appendChild(div);
+  showTask.appendChild(li);
+};
+
+const completed = (e) => {
+  const selectedTask = Array.from(
+    e.parentElement.parentElement.parentElement.children,
+  ).indexOf(e.parentElement.parentElement);
+  //   console.log(selectedTask);
+  const preData = localStorage.getItem("todo");
+  const arr = JSON.parse(preData);
+  arr[selectedTask].isComplete = true;
+  localStorage.setItem("todo", JSON.stringify(arr));
+};
+const deleteTask = (e) => {
+  const selectedTask = Array.from(
+    e.parentElement.parentElement.parentElement.children,
+  ).indexOf(e.parentElement.parentElement);
+  //   console.log(selectedTask);
+  const preData = localStorage.getItem("todo");
+  const arr = JSON.parse(preData);
+  arr.splice(selectedTask, 1);
+  localStorage.setItem("todo", JSON.stringify(arr));
+};
+
+const showTaskFromJSON = () => {
+  const preData = localStorage.getItem("todo");
+  const arr = JSON.parse(preData);
+  arr.forEach((tasks) => {
+    addTask(tasks.task, tasks.isComplete);
+  });
+};
+showTaskFromJSON();
