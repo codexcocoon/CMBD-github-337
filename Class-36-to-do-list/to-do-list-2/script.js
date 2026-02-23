@@ -37,11 +37,9 @@ const addTask = (task, isComplete = false) => {
   const p = document.createElement("p");
   p.textContent = task;
   p.classList.add("font-normal");
-  if (isComplete) {
-    p.classList.add("line-through", "text-gray-500");
-  }
   const div = document.createElement("div");
   isDisabled = isComplete ? "disabled" : "";
+  isComplete ? p.classList.add("line-through", "text-gray-500") : "";
   div.innerHTML = `
             <button onClick="this.setAttribute('disabled', true);
             this.parentElement.previousElementSibling.classList.add('line-through');
